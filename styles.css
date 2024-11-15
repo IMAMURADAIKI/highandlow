@@ -3,40 +3,76 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 800px;
+    height: 100vh;
     margin: 0;
-    background-color:#f0f0f0;
-}
-
-h1{
-    font-size: 25px;
+    background-color: #f2f2f2;
 }
 
 .container {
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 200px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1c993d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 3000px;
+}
+
+.decks {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.deck {
+    text-align: center;
+}
+
+.card-container {
+    margin-bottom: 200px;
 }
 
 .card-container img {
     width: 150px;
     height: auto;
+    transition: transform 0.3s; /* カードめくりのアニメーション */
 }
 
-.button-container {
-    margin-top: 20px;
+.card-container .flipped {
+    transform: rotateY(180deg);
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
+.card-stack {
+    position: relative;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 5枚だけ軽く斜めにずらしながら重ねる効果 */
+.card-stack img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    opacity: 0.9;
+    transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotate-angle));
+}
+
+/* メッセージやボタンのスタイル */
+.message {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding: 10px 200px;
+    font-size: 2em;
     margin: 5px;
+    cursor: pointer;
 }
 
 #scoreboard {
     margin-top: 20px;
+    font-size: 1em;
 }
