@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1c993d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 3000px;
+}
+
+.decks {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1px;
+}
+
+.deck {
+    text-align: center;
+}
+
+.card-container {
+    margin-bottom: 15px;
+}
+
+.card-container img {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s; /* カードめくりのアニメーション */
+}
+
+.card-container .flipped {
+    transform: rotateY(180deg);
+}
+
+.card-stack {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 5枚だけ軽く斜めにずらしながら重ねる効果 */
+.card-stack img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    opacity: 0.9;
+    transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotate-angle));
+}
+
+/* メッセージやボタンのスタイル */
+.message {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding: 10px 200px;
+    font-size: 2em;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#scoreboard {
+    margin-top: 20px;
+    font-size: 1em;
+}
